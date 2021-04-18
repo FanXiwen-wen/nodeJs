@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--引入公共头部-->
+    {{include './header.html'}}
+
+    <!--留一个坑，如果坑不填就显示默认内容-->
+    {{block 'content'}}
+      <h1>默认内容</h1>
+    {{/block}}
+
+    {{include './footer.html'}}
+</body>
+</html>

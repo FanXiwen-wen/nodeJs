@@ -1,0 +1,39 @@
+<!--要引入jqery-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        $('#register_form').on('submit',function(e){
+            e.preventDefault()
+            var formData=$(this).serialize()
+            $.ajax({
+                url:'/register',
+                type:'post',
+                data:formData,
+                dataType:'json',
+                success:function(data){
+                    var err_code=data.err_code
+                    if(err_code===0){
+                        //服务端重定向对异步请求无效，只针对同步请求有效
+                        //所以注册成功异步要在客户端自己重定向
+                        window.location.href='/'
+                    }
+                    else if(err_code===1){
+                        window.alert('邮箱或昵称已存在')
+                    }
+                    else if(err_code===500){
+                        window.alert('服务器忙，请稍后重试')
+                    }
+                }
+            })
+        })
+    </script>
+</body>
+</html>

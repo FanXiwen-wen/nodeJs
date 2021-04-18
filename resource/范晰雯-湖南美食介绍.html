@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>湖南美食介绍</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .head{
+            margin: auto;
+            margin-top: 10px;
+            width: 65%;
+            height: 300px;
+            border: solid 1px #e7e7e7;
+        }
+        .left{
+            position: relative;
+            padding-left: 45px;
+            float: left;
+            width: 300px;
+        }
+        #湖南美食{
+            position: relative;
+            font-size: 300%;
+            text-indent: 56px;
+            line-height: 100px;
+            text-shadow: 5px 5px 5px rgb(167,124,124);
+        }
+        .right{
+            position: relative;
+            float: right;
+            padding-right: 45px;
+            padding-top: 10px;
+            width: 400px;
+        }
+        .dh{
+            width: 400px;
+            height: 270px;
+            position: absolute;
+            opacity: 0;
+            animation-name: donghua;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+        }
+        :nth-child(1).dh{
+            animation-delay: 2s;
+        }
+        :nth-child(2).dh{
+            animation-delay: 4s;
+        }
+        :nth-child(3).dh{
+            animation-delay:6s;
+        }
+        :nth-child(4).dh{
+            animation-delay: 8s;
+        }
+        @keyframes donghua{
+          0%{opacity: 0;}
+          1%{opacity: 0.3;}
+          2%{opacity: 0.5;}
+          3%{opacity: 0.8;}
+          4%{opacity:1;}
+         19%{opacity: 1;}
+         20%{opacity: 0;}
+        }
+        .body{
+            width: 65%;
+            height: 1300px;
+            margin:auto;
+            position: relative;
+            border: 1px solid #e7e7e7;
+        }
+        .btn {                         /*按钮大小*/
+            width: 48%;
+            padding: 5px;
+            position: relative;
+            float: left;
+            text-align: center;
+            font-size: larger;
+            text-shadow: 5px 5px 5px rgb(167,124,124);;
+            border: 1px solid #e7e7e7;
+            cursor: pointer;
+        }
+        .btn.active {                        /*默认显示*/
+            background-color: pink;
+        }
+
+        .content {
+            display: none;                           /*内容不显示*/
+        }
+        .content.show {   /*内容显示*/
+            display: block;
+        }
+        .course1,.course3,.course5,.course7{
+            height: 230px;
+            width: 400px;
+            float: right;
+        }
+        .course2,.course4,.course6,.course8{
+            height: 230px;
+            width: 400px;
+            float: left;
+        }
+        #剁椒鱼头,#臭豆腐{
+            width: 350px;
+            height: 230px;
+            padding-top: 20px;
+            padding-left: 30px;
+            float: left;
+        }
+        .剁椒鱼头right{
+            float: right;
+            padding-top: 30px;
+            padding-right: 160px;
+            line-height: 50px;
+            font-size: x-large;
+            text-shadow: 5px 5px 5px rgb(167,124,124);;
+        }
+        .剁椒鱼头right2{
+            float: right;
+            padding-top: 20px;
+            padding-right:50px ;
+            font-size: larger;
+        }
+        #辣椒炒肉{
+            width: 350px;
+            height: 230px;
+            float: right;
+            padding-top: 50px;
+            padding-right: 30px;
+        }
+        .辣椒炒肉left{
+            float: left;
+            padding-top: 40px;
+            padding-left: 160px;
+            line-height: 50px;
+            font-size: x-large;
+            text-shadow: 5px 5px 5px rgb(167,124,124);;
+        }
+        .辣椒炒肉left2{
+            float: left;
+            padding-top: 20px;
+            padding-left: 40px;
+            font-size: larger;
+        }
+        #永州血鸭{
+            float: left;
+            width: 350px;
+            height: 230px;
+            padding-top: 60px;
+            padding-left: 30px;
+        }
+        .永州血鸭right{
+            float: right;
+            padding-top: 40px;
+            padding-right: 160px;
+            line-height: 50px;
+            font-size: x-large;
+            text-shadow: 5px 5px 5px rgb(167,124,124);;
+        }
+        .永州血鸭right2{
+            float: right;
+            padding-top: 20px;
+            padding-right:50px ;
+            font-size: larger;
+        }
+        #腊味合蒸{
+            width: 350px;
+            height: 230px;
+            float: right;
+            padding-top: 60px;
+            padding-right: 30px;
+        }
+        .腊味合蒸left{
+            float: left;
+            padding-top: 40px;
+            padding-left: 160px;
+            line-height: 50px;
+            font-size: x-large;
+            text-shadow: 5px 5px 5px rgb(167,124,124);;
+        }
+        .腊味合蒸left2{
+            float: left;
+            padding-top: 20px;
+            padding-left: 40px;
+            font-size: larger;
+        }
+        .臭豆腐right{
+            float: right;
+            padding-top: 30px;
+            padding-right: 180px;
+            line-height: 50px;
+            font-size: x-large;
+            text-shadow: 5px 5px 5px rgb(167,124,124);;
+        }
+        .臭豆腐right2{
+            float: right;
+            padding-top: 20px;
+            padding-right:50px ;
+            font-size: larger;
+        }
+        #糖油粑粑{
+            width: 350px;
+            height: 230px;
+            float: right;
+            padding-top: 50px;
+            padding-right: 30px;
+        }
+        .糖油粑粑left{
+            float: left;
+            padding-top: 40px;
+            padding-left: 160px;
+            line-height: 50px;
+            font-size: x-large;
+            text-shadow: 5px 5px 5px rgb(167,124,124);;
+        }
+        .糖油粑粑left2{
+            float: left;
+            padding-top: 20px;
+            padding-left: 90px;
+            font-size: larger;
+        }
+        #酱板鸭{
+            float: left;
+            width: 350px;
+            height: 230px;
+            padding-top: 80px;
+            padding-left: 30px;
+        }
+        .酱板鸭right{
+            float: right;
+            padding-top: 30px;
+            padding-right: 180px;
+            line-height: 50px;
+            font-size: x-large;
+            text-shadow: 5px 5px 5px rgb(167,124,124);;
+        }
+        .酱板鸭right2{
+            float: right;
+            padding-top: 20px;
+            padding-right:50px ;
+            font-size: larger;
+        }
+        #口味虾{
+            width: 350px;
+            height: 230px;
+            float: right;
+            padding-top: 50px;
+            padding-right: 30px;
+        }
+        .口味虾left{
+            float: left;
+            padding-top: 40px;
+            padding-left: 160px;
+            line-height: 50px;
+            font-size: x-large;
+            text-shadow: 5px 5px 5px rgb(167,124,124);;
+        }
+        .口味虾left2{
+            float: left;
+            padding-top: 20px;
+            padding-left: 90px;
+            font-size: larger;
+        }
+        .course{
+            width: 100%;
+            height: 310px;
+        }
+    </style>
+</head>
+<body>
+   <div class="head">
+      <div class="left">
+         <p id="湖南美食">湖南美食</p>
+         <img width="300" src="img/湖南美食.jpg" alt="">
+      </div>
+      <div class="right">
+         <img class="dh" src="img/1.jpg"  >
+         <img class="dh" src="img/2.png" >
+         <img class="dh" src="img/3.jpg" >
+         <img class="dh" src="img/4.png" >
+         <img class="dh" src="img/口味虾.jpg">
+      </div>
+   </div><br/><br/>
+
+  
+
+   <div class="body">
+    <div class="btn1">
+        <div class="btn active">地道湘菜</div>
+        <!-- 按钮类名后加 active是被选中 -->
+        <div class="btn">特色小吃</div>
+    </div>
+    <div class="content show">
+    <!-- 按钮类名后加 active是被选中 -->
+       <div class="course">
+          
+            <img src="img/剁椒鱼头.jpg" alt="" id="剁椒鱼头">
+            <div class="course1">
+                <div class="剁椒鱼头right">
+                    <p>剁椒鱼头</p>
+                </div>
+                <div class="剁椒鱼头right2">
+                    <p>口味：微咸鲜辣</p><br/>
+                    <p>特点：以鱼头的"味鲜"和剁椒的"辣"为一体</p><br/>
+                    <p>营养价值：鱼头降低血脂、辣椒暖胃驱寒</p>
+                </div>
+            </div>
+            
+           
+          
+       </div>
+       <div class="course">
+           <img src="img/辣椒炒肉.jpg" alt="" id="辣椒炒肉">
+           <div class="course2">
+            <div class="辣椒炒肉left">
+                <p>辣椒炒肉</p>
+            </div>
+            <div class="辣椒炒肉left2">
+                <p>口味：香辣味鲜</p><br/> 
+                <p>特点：猪肉肥瘦相间、肉质鲜嫩</p><br/>
+                <p>营养价值：猪肉含有丰富优质蛋白质</p>
+            </div>
+           </div>
+           
+       </div>
+       <div class="course">
+           <img src="img/永州血鸭.jpg" alt="" id="永州血鸭">
+           <div class="course3">
+            <div class="永州血鸭right">
+                <p>永州血鸭</p>
+            </div>
+            <div class="永州血鸭right2">
+                <p>口味：香辣美味</p><br/>
+                <p>特点：鸭血与鸭肉完美融合、色香味俱全</p><br/>
+                <p>营养价值：开胃凉血、驱寒暖胃</p>
+            </div>
+           </div>
+          
+       </div>
+       <div class="course">
+           <img src="img/腊味合蒸.jpg" alt="" id="腊味合蒸">
+           <div class="course4">
+            <div class="腊味合蒸left">
+                <p>腊味合蒸</p>
+            </div>
+            <div class="腊味合蒸left2">
+                <p>口味：腊香浓重</p><br/>
+                <p>特点：做法简单、色香味型俱佳</p><br/>
+                <p>营养价值：开胃驱寒、消食</p>
+            </div>
+           </div>
+       </div>
+    </div>
+
+    <div class="content">
+       <div class="course">
+           <img src="img/臭豆腐.jpg" alt="" id="臭豆腐">
+           <div class="course5">
+            <div class="臭豆腐right">
+                <p>臭豆腐</p>
+            </div>
+            <div class="臭豆腐right2">
+                <p>口味：外焦里嫩、鲜而香辣</p><br/>
+                <p>特点：初闻臭气扑鼻，细嗅浓香诱人</p><br/>
+                <p>营养价值：和脾胃，消胀痛</p>
+            </div>
+           </div>
+          
+       </div>
+       <div class="course">
+           <img src="img/糖油粑粑.jpg" alt="" id="糖油粑粑">
+           <div class="course6">
+            <div class="糖油粑粑left">
+                <p>糖油粑粑</p>
+            </div>
+            <div class="糖油粑粑left2">
+                <p>口味：甜而不浓，油而不腻</p><br/>
+                <p>特点：长沙地方传统名吃</p>
+            </div>
+           </div>
+           
+       </div>
+       <div class="course">
+           <img src="img/酱板鸭.jpg" alt="" id="酱板鸭">
+           <div class="course7">
+            <div class="酱板鸭right">
+                <p>酱板鸭</p>
+            </div>
+            <div class="酱板鸭right2">
+                <p>口味：皮肉酥香，酱香浓郁</p><br/>
+                <p>特点：香、辣、甘、麻、咸、酥、绵适中</p><br/>
+                <p>营养价值：活血、顺气、健脾、养胃</p>
+            </div>
+           </div>
+           
+       </div>
+       <div class="course">
+           <img src="img/口味虾.jpg" alt="" id="口味虾">
+           <div class="course8">
+            <div class="口味虾left">
+                <p>口味虾</p>
+              </div>
+              <div class="口味虾left2">
+                <p>口味：麻辣鲜香</p><br/>
+                <p>特点：色泽红亮，质地滑嫩，滋味香辣</p><br/>
+                <p>营养价值：化瘀解毒 提高免疫力</p>
+              </div>
+           </div>
+          
+       </div>
+    </div>
+
+    <script>
+        //获取类似导航栏的按钮：页面一，页面二，页面三
+        var btns = document.getElementsByClassName("btn");//因为html中叫btn的class有多个，所以它获取的是一个长度为3的数组
+        //获取3个content内容
+        var contents = document.getElementsByClassName("content");//同上
+
+        //遍历每个按钮为其添加点击事件
+        for (var i = 0; i < btns.length; i++) 
+        {
+            btns[i].index = i;  //好像是为它添加下标（我也不知道为啥但是一定要拥有
+            btns[i].onclick = function ()  //onclick是鼠标点击事件
+            {
+                //对当前点击的按钮赋予active类名及显示当前按钮对应的内容
+                for (var j = 0; j < btns.length; j++) 
+                {
+                    btns[j].className = btns[j].className.replace(' active', '');   //把active替换成没有 active的（就没有被选中了不是粉红色的了
+                    contents[j].className = contents[j].className.replace(' show', ''); //把show替换成没有 show的（内容就隐藏了
+                };
+                this.className = this.className + ' active';  //当前选中的按钮类名加上 active就显示粉色被选中了
+                contents[this.index].className = contents[this.index].className + ' show'; //当前选中的按钮对应的内容类名加上 show也就被显示了
+            };
+
+        }
+    </script>
+
+   </div>
+   
+</body>
+</html>

@@ -1,0 +1,12 @@
+app.js:项目的入口文件
+controllers:
+models:存储使用mongoose设计的数据模型
+node_modules:第三方包
+package.json:包描述文件
+package.lock.json:第三方包版本锁定文件(npm 5以后才有)
+public:公共的静态资源
+routes：如果业务比较多，代码量大，最好是把路由按照业务的分类存储到不同文件中
+router.js:简单一点把所有的路由都放到这个文件
+views：存储视图目录
+
+express中间件：

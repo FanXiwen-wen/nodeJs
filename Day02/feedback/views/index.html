@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header container">
+        <div class="page-header">
+            <h1>Example page Header <small>Subtext for Header</small></h1>
+             <a class="btn btn-success" href="post.html">发表留言</a>
+        </div>
+    </div>
+    <div class="comments container">
+        <ul class="list-group">
+            {{each comments}}
+            <li class="list-group-item">{{$value.name}}说：{{$value.message}}</li>
+            {{/each}}
+        </ul>
+    </div>
+</body>
+</html>
